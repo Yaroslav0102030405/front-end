@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Light"), local("Gilroy-Light"), url("../../fonts/Gilroylight.woff2") format("woff2"), url("../../fonts/Gilroylight.woff") format("woff"), url("../../fonts/Gilroylight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"), url("../../fonts/Gilroyextrabold.woff2") format("woff2"), url("../../fonts/Gilroyextrabold.woff") format("woff"), url("../../fonts/Gilroyextrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+body {
+  font-family: Gilroy, -apple-system, BlinkMacSystemFont, avenir next, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  background-color: #272d3d;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Создание контейнера ----------- */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 330px) {
+  .container {
+    width: 330px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+/* Личный нормализатор -------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  padding: 0;
+  color: var(--title-color);
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  font-style: normal;
+  cursor: url("../images/cursor/cursor2.png"), auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Зброс зазора */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}/*# sourceMappingURL=main.css.map */
