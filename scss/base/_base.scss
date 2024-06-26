@@ -21,6 +21,10 @@ body {
   }
 }
 
+.container-2 {
+  width: 1440px;
+}
+
 // @media screen and (min-width: 1200px) {
 //   .container {
 //     width: 1200px;
@@ -48,8 +52,6 @@ a {
   display: block;
   text-decoration: none;
   font-style: normal;
-
-  cursor: url("../images/cursor/cursor2.png"), auto;
 }
 
 ul {
@@ -67,9 +69,8 @@ img {
 
 .icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
   fill: currentColor;
+  width: 100%;
+  height: 100%;
+  fill: aqua;
 }

@@ -1,0 +1,46 @@
+.feedback {
+  padding-top: 30px;
+}
+
+.overlay-left {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: url(../../images/left.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  opacity: 50%;
+}
+
+.wapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  gap: 20px;
+}
+
+.right li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background-color: $stroke;
+  min-width: 141px;
+  justify-content: center;
+}
+
+.right-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.frontend-decor {
+  margin-left: auto;
+  margin-right: auto;
+}
