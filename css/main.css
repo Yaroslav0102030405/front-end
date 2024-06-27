@@ -15,6 +15,7 @@ body {
   font-family: Gilroy, -apple-system, BlinkMacSystemFont, avenir next, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   background-color: #272d3d;
   color: #ffffff;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -35,9 +36,10 @@ body {
     width: 768px;
   }
 }
-
-.container-2 {
-  width: 1440px;
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 1000px;
+  }
 }
 
 /* Личный нормализатор -------------- */
@@ -84,17 +86,19 @@ img {
 }
 
 .feedback {
+  position: relative;
   padding-top: 30px;
 }
 
 .overlay-left {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 400px;
   height: 400px;
   background-image: url(../../images/left.png);
   background-repeat: no-repeat;
   background-position: left;
-  opacity: 50%;
 }
 
 .wapper {
@@ -107,6 +111,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 90px;
 }
 
 .right {
@@ -116,11 +121,13 @@ img {
   gap: 20px;
 }
 
-.right li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -128,18 +135,193 @@ img {
   border-radius: 10px;
   background-color: #303a53;
   min-width: 141px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.right-text {
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
 }
 
+.button::before {
+  content: "";
+  width: 13px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.button-1::before {
+  background-image: url(../../images/calendar.png);
+  background-size: contain;
+}
+
+.button-2::before {
+  background-image: url(../../images/time.png);
+  background-size: contain;
+}
+
 .frontend-decor {
   margin-left: auto;
   margin-right: auto;
+}
+
+.wapper-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.content {
+  max-width: 426px;
+}
+
+.content-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  background-color: #4252d1;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.content-link::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  background-image: url(../../images/gg_time.png);
+  background-size: contain;
+}
+
+.content-title {
+  font-weight: 800;
+  font-size: 77px;
+  text-transform: uppercase;
+  color: #ff3459;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.position {
+  position: relative;
+}
+
+.content-text-span {
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-size: 24px;
+  line-height: 1.16;
+  font-weight: 600;
+}
+
+.content-text-span-2 {
+  position: absolute;
+  width: 106px;
+  height: 40px;
+  border-radius: 5px;
+  left: 0;
+  top: -25%;
+  background-color: #ff3459;
+  -webkit-transform: rotate(176deg);
+          transform: rotate(176deg);
+  z-index: -1;
+}
+
+.content-text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.18;
+  margin-bottom: 28px;
+}
+
+.content-description {
+  font-weight: 500;
+  font-size: 18px;
+  max-width: 419px;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+
+.gray {
+  color: #d7d7d7;
+  font-weight: 400;
+}
+
+.blue {
+  color: #4252d1;
+}
+
+.red {
+  color: #ff3459;
+}
+
+.wapper-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.wapper-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.23;
+  margin-bottom: 0;
+}
+
+.none {
+  text-transform: none;
+}
+
+.wapper-text-1 {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.wapper-text-2 {
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 214px;
+}
+
+.form {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #303a53;
+  text-align: center;
+}
+
+.form-title {
+  font-weight: 700;
+  max-width: 245px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.form-input {
+  padding: 10px;
+  width: 100%;
+  height: 51px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #272d3d;
 }/*# sourceMappingURL=main.css.map */

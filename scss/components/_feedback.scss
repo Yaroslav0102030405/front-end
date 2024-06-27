@@ -1,21 +1,37 @@
 .feedback {
+  position: relative;
   padding-top: 30px;
 }
 
 .overlay-left {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 400px;
   height: 400px;
   background-image: url(../../images/left.png);
   background-repeat: no-repeat;
   background-position: left;
-  opacity: 50%;
+  // opacity: 50%;
 }
+
+// .overlay-right {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 790px;
+//   height: 750px;
+//   // background: url(../../images/right.png) no-repeat right;
+//   background-image: url(../../images/right.png);
+//   background-repeat: no-repeat;
+//   background-position: right;
+// }
 
 .wapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 90px;
 }
 
 .right {
@@ -23,24 +39,191 @@
   gap: 20px;
 }
 
-.right li {
-  display: flex;
-  gap: 10px;
+.button {
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
   padding: 13px 20px;
   border-radius: 10px;
   background-color: $stroke;
   min-width: 141px;
-  justify-content: center;
-}
-
-.right-text {
+  color: $white-text-color;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
 }
 
+.button::before {
+  content: "";
+  width: 13px;
+  height: 14px;
+  margin-right: 10px;
+  // background-image: url(../../images/calendar.png);
+  // background-size: contain;
+}
+
+.button-1::before {
+  background-image: url(../../images/calendar.png);
+  background-size: contain;
+}
+
+.button-2::before {
+  background-image: url(../../images/time.png);
+  background-size: contain;
+}
+
 .frontend-decor {
   margin-left: auto;
   margin-right: auto;
+}
+
+.wapper-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content {
+  max-width: 426px;
+}
+.content-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  // @extend .button;
+  color: $white-text-color;
+  padding: 3px 10px;
+
+  border-radius: 5px;
+  background-color: $blue-color;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.content-link::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  background-image: url(../../images/gg_time.png);
+  background-size: contain;
+}
+
+.content-title {
+  font-weight: 800;
+  font-size: 77px;
+  text-transform: uppercase;
+  color: $accent-color;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.position {
+  position: relative;
+}
+
+.content-text-span {
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-size: 24px;
+  line-height: 1.16;
+  font-weight: 600;
+}
+
+.content-text-span-2 {
+  position: absolute;
+  width: 106px;
+  height: 40px;
+  border-radius: 5px;
+  left: 0;
+  top: -25%;
+  background-color: $accent-color;
+  transform: rotate(176deg);
+  z-index: -1;
+}
+
+.content-text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.18;
+  margin-bottom: 28px;
+}
+
+.content-description {
+  font-weight: 500;
+  font-size: 18px;
+  max-width: 419px;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+
+.gray {
+  color: $gray-text-color;
+  font-weight: 400;
+}
+
+.blue {
+  color: $blue-color;
+}
+
+.red {
+  color: $accent-color;
+}
+
+.wapper-flex {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.wapper-name {
+  text-transform: uppercase;
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.23;
+  margin-bottom: 0;
+}
+
+.none {
+  text-transform: none;
+}
+
+.wapper-text-1 {
+  font-size: 12px;
+  line-height: 1.6;
+  // max-width: 307px;
+}
+
+.wapper-text-2 {
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 214px;
+}
+
+.form {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: $stroke;
+  text-align: center;
+}
+
+.form-title {
+  font-weight: 700;
+  max-width: 245px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.form-input {
+  // display: block;
+  padding: 10px;
+  width: 100%;
+  height: 51px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: $bg-color;
 }
