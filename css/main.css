@@ -184,6 +184,12 @@ img {
           justify-content: space-between;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 800px) {
+  .wapper-bottom {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 
 .content {
   max-width: 426px;
@@ -386,10 +392,16 @@ img {
 }
 
 .position-icons {
-  position: absolute;
-  top: 30%;
-  right: 6%;
-  width: 142px;
+  display: none;
+}
+@media screen and (min-width: 1420px) {
+  .position-icons {
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    width: 142px;
+  }
 }
 
 .html {
