@@ -507,6 +507,7 @@ img {
   margin-bottom: 10px;
   background-color: #272d3d;
   border: none;
+  color: #ffffff;
 }
 
 .form-input::-webkit-input-placeholder {
@@ -648,4 +649,33 @@ img {
   height: 6px;
   border-radius: 50%;
   background-color: #48aef3;
+}
+
+.input-select {
+  position: relative;
+}
+
+.select {
+  position: absolute;
+  display: block;
+  position: absolute;
+  top: 42.5%;
+  left: 56px;
+}
+@media screen and (max-width: 801px) {
+  .select {
+    top: 41.5%;
+    left: 40px;
+  }
+}
+
+select#size {
+  border: none;
+  font-size: 17px;
+  color: #ffffff;
+  background-color: #272d3d;
+}
+
+.form-input-2 {
+  padding-left: 90px;
 }/*# sourceMappingURL=main.css.map */
