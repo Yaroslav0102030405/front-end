@@ -89,8 +89,6 @@
   width: 13px;
   height: 14px;
   margin-right: 10px;
-  // background-image: url(../../images/calendar.png);
-  // background-size: contain;
 }
 
 .button-1::before {
@@ -115,16 +113,17 @@
   gap: 30px;
 
   @media screen and (max-width: 800px) {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
+
 .content {
   max-width: 426px;
-
   @media screen and (max-width: 768px) {
     text-align: center;
   }
 }
+
 .content-link {
   display: inline-flex;
   justify-content: center;
@@ -146,6 +145,14 @@
   }
 }
 
+.order {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    order: 0;
+  }
+}
+
 .content-link::before {
   content: "";
   width: 15px;
@@ -164,7 +171,7 @@
   margin-top: -10px;
 
   @media screen and (max-width: 768px) {
-    font-size: 54px;
+    font-size: 50px;
     margin-bottom: 4px;
   }
 
@@ -206,6 +213,8 @@
   @media screen and (max-width: 768px) {
     width: 80px;
     height: 30px;
+    left: 12px;
+    top: -30%;
   }
 }
 
@@ -216,7 +225,7 @@
   margin-bottom: 28px;
 
   @media screen and (max-width: 768px) {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 
@@ -248,14 +257,19 @@
 }
 
 .wapper-flex {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 20px;
 
   @media screen and (max-width: 768px) {
-    width: 328px;
-    padding: 40px 24px;
+    justify-content: center;
+    margin-bottom: 5px;
   }
+}
+
+.wapper-text {
+  align-items: start;
+  align-items: flex-start;
 }
 
 .wapper-name {
@@ -274,13 +288,20 @@
 .wapper-text-1 {
   font-size: 12px;
   line-height: 1.6;
-  // max-width: 307px;
+  max-width: 307px;
+
+  @media screen and (max-width: 768px) {
+    width: 162px;
+  }
 }
 
 .wapper-text-2 {
   font-size: 12px;
   line-height: 1.5;
   max-width: 214px;
+  @media screen and (max-width: 768px) {
+    width: 162px;
+  }
 }
 
 .form {
@@ -289,9 +310,10 @@
   border-radius: 10px;
   background-color: $stroke;
   text-align: center;
+  max-width: 366px;
 
   @media screen and (max-width: 768px) {
-    width: 328px;
+    // width: 328px;
     padding: 40px 24px;
   }
 }
