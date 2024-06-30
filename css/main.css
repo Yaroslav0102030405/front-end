@@ -507,7 +507,6 @@ img {
   width: 100%;
   height: 51px;
   border-radius: 5px;
-  margin-bottom: 10px;
   background-color: #272d3d;
   border: none;
   color: #ffffff;
@@ -660,16 +659,10 @@ img {
 
 .select {
   position: absolute;
-  display: block;
-  position: absolute;
-  top: 42.5%;
-  left: 56px;
-}
-@media screen and (max-width: 801px) {
-  .select {
-    top: 41.5%;
-    left: 40px;
-  }
+  top: 25%;
+  left: 33px;
+  -webkit-transform: translate(-25%);
+          transform: translate(-25%);
 }
 
 select#size {
@@ -681,4 +674,12 @@ select#size {
 
 .form-input-2 {
   padding-left: 90px;
+}
+
+.form-input.active {
+  border: 1px solid #ff3459;
+}
+
+.input-name-text {
+  color: #ff3459;
 }/*# sourceMappingURL=main.css.map */
