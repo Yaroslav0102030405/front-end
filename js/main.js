@@ -19,9 +19,8 @@ function onBtnSubmit(e) {
   const name = refs.formInputName.value;
   const tel = refs.formInputTel.value;
   const email = refs.formInputEmail.value;
-  //   console.log(name);
 
-  if (name === "" && tel === "" && email === "") {
+  if (name == "" && tel == "" && email == "") {
     console.log("Ghbdtn!");
 
     onInputTextError(
@@ -29,26 +28,37 @@ function onBtnSubmit(e) {
       refs.inputTextName,
       refs.formInputName
     );
-    // refs.inputTextName.textContent = "Обов'язкове поле для заповнення";
-    // refs.inputTextName.style.color = "#ff3459";
-    // refs.formInputName.style.border = "1px solid #ff3459";
-
     onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
-
-    // refs.inputTextTel.textContent = "Обов'язкове поле для заповнення";
-    // refs.inputTextTel.style.color = "#ff3459";
-    // refs.formInputTel.style.border = "1px solid #ff3459";
-
     onInputTextError(
       refs.inputTextEmail,
       refs.inputTextEmail,
       refs.formInputEmail
     );
-
-    // refs.inputTextEmail.textContent = "Обов'язкове поле для заповнення";
-    // refs.inputTextEmail.style.color = "#ff3459";
-    // refs.formInputEmail.style.border = "1px solid #ff3459";
+  } else if (name !== "" && tel === "" && email === "") {
+    onInputTextSuccess(refs.inputTextName, refs.formInputName);
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(
+      refs.inputTextEmail,
+      refs.inputTextEmail,
+      refs.formInputEmail
+    );
+  } else if (name !== "" && tel !== "" && email === "") {
+    onInputTextSuccess(refs.inputTextName, refs.formInputName);
+    onInputTextSuccess(refs.inputTextTel, refs.formInputTel);
+    // onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(
+      refs.inputTextEmail,
+      refs.inputTextEmail,
+      refs.formInputEmail
+    );
   }
+}
+
+function onInputTextSuccess(color, border) {
+  //   name.textContent = "Обов'язкове поле для заповнення";
+  color.style.color = "#ff3459";
+  border.style.border = "1px solid green";
 }
 
 function onInputTextError(name, color, border) {
