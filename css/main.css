@@ -121,12 +121,15 @@ img {
   .overlay-botton {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
+    left: 50%;
+    width: 330px;
+    height: 510px;
     background-image: url(../../images/bottom.png);
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: bottom;
+    z-index: -1;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
   }
 }
 

@@ -36,13 +36,16 @@
   @media screen and (max-width: $tablet) {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
+    left: 50%;
+    width: 330px;
+    height: 510px;
     background-image: url(../../images/bottom.png);
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: bottom;
     // opacity: 50%;
+    z-index: -1;
+
+    transform: translate(-50%);
   }
 }
 
