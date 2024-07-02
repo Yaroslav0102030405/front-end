@@ -105,8 +105,8 @@
               </li>
               <li>
                 <div class="input-select">
-                <label">
-                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" placeholder="Ваш номер телефона" />
+                <label>
+                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Ваш номер телефона" />
                 <p class="input-text-tel"></p></label>
                 <select class="select" id="size" name="size">
                   <option value="xs" selected>+380</option>
@@ -114,7 +114,7 @@
                 </select>
               </div>
               </li>
-              <li><label"> <input class="form-input form-input-email" name="email"  type="email" placeholder="Ваш email"><p class="input-text-email"></p></label></li>
+              <li><label> <input class="form-input form-input-email" name="email"  type="email" placeholder="Ваш email"><p class="input-text-email"></p></label></li>
             </ul>
             <button class="btn-submit" type="submit">Записаться бесплатно</button>
             <p class="form-text">Нажимая на кнопку я согашаюсь</p>
