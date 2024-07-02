@@ -94,7 +94,10 @@
           </div>
 
           <!-- <div class="form-order"> -->
-          <form class="form">
+          <form action="https://api.web3forms.com/submit" method="POST" id="form" class="form" >
+
+            <input type="hidden" name="access_key" value="91f13117-b1ce-44d2-825c-b587ac08bfb4">
+
             <h3 class="form-title">Запишитесь <span class="red">бесплатно</span>  и получите подарок</h3>
             <ul>
               <li>
@@ -106,16 +109,17 @@
               <li>
                 <div class="input-select">
                 <label>
-                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Ваш номер телефона" />
+                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Ваш номер телефона"  autocomplete="off"/>
                 <p class="input-text-tel"></p></label>
                 <select class="select" id="size" name="size">
-                  <option value="xs" selected>+380</option>
-                  <option value="s">+48</option>
+                  <option value="+380" selected>+380</option>
+                  <option value="+48">+48</option>
                 </select>
               </div>
               </li>
               <li><label> <input class="form-input form-input-email" name="email"  type="email" placeholder="Ваш email"><p class="input-text-email"></p></label></li>
             </ul>
+            <p class="success-message"></p>
             <button class="btn-submit" type="submit">Записаться бесплатно</button>
             <p class="form-text">Нажимая на кнопку я согашаюсь</p>
             <a class="form-link" href="#">с политикой конфидециальности</a>
@@ -146,6 +150,10 @@
 
      
     </section>
+
+    <!-- Відправка форми на телеграм -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="./js/telegram.js" type="module"></script> -->
 
     <script src="./js/main.js" type="module"></script>
   </body>
