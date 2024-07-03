@@ -658,17 +658,18 @@ img {
 
 .input-select {
   position: relative;
+  overflow: hidden;
 }
 
 .select {
   position: absolute;
-  top: 25%;
-  left: 33px;
-  -webkit-transform: translate(-25%);
-          transform: translate(-25%);
+  top: 15px;
+  left: 15px;
 }
 
 select#size {
+  width: 62px;
+  height: 20px;
   border: none;
   font-size: 17px;
   color: #ffffff;

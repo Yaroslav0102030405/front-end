@@ -301,18 +301,18 @@ function onInputTextSuccess(color, border) {
 
 function onInputTextError(name, color, border) {
   name.textContent = "Обов'язкове поле для заповнення";
-  color.style.color = "#ff3459";
-  border.style.border = "1px solid #ff3459";
+  color.style.color = "#FF3131";
+  border.style.border = "1px solid #FF3131";
 }
 
 function onInputTextError2(name, color, border) {
   name.textContent = "Поле має містити не менше 9 символів";
-  color.style.color = "#ff3459";
-  border.style.border = "1px solid #ff3459";
+  color.style.color = "#FF3131";
+  border.style.border = "1px solid #FF3131";
 }
 
 function onInputTextError3(name, color, border) {
   name.textContent = "Поле має містити обов'язковий @ символ";
-  color.style.color = "#ff3459";
-  border.style.border = "1px solid #ff3459";
+  color.style.color = "#FF3131";
+  border.style.border = "1px solid #FF3131";
 }

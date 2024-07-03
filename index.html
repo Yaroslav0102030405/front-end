@@ -106,15 +106,24 @@
                 /><p class="input-text-name"></p></label>
               </li>
               <li>
-                <div class="input-select">
+              
+                <!-- <div class="input-select"> -->
                 <label>
+                  <div class="input-select">
                 <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Номер телефону" autocomplete="off"/>
-                <p class="input-text-tel"></p></label>
+                <!-- <p class="input-text-tel"></p> -->
                 <select class="select" id="size" name="size">
-                  <option style="background-image:url(./images/calendar.png);" class="icon" value="+380" selected>+380</option>
+                  <option value="+380" selected>+380</option>
                   <option value="+48">+48</option>
                 </select>
+                <p class="input-text-tel"></p>
               </div>
+              </label>
+                <!-- <select class="select" id="size" name="size">
+                  <option style="background-image:url(./images/calendar.png);" class="icon" value="+380" selected>+380</option>
+                  <option value="+48">+48</option>
+                </select> -->
+              <!-- </div> -->
               </li>
               <li><label> <input class="form-input form-input-email" name="email"  placeholder="E-mail"><p class="input-text-email"></p></label></li>
             </ul>

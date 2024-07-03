@@ -498,13 +498,15 @@
 
 .input-select {
   position: relative;
+  overflow: hidden;
 }
 
 .select {
   position: absolute;
-  top: 25%;
-  left: 33px;
-  transform: translate(-25%);
+  top: 15px;
+  left: 15px;
+  // bottom: 0;
+  // transform: translate(-25%);
 
   // @media screen and (max-width: $tablet) {
   //   top: 25%;
@@ -515,10 +517,13 @@
 }
 
 select#size {
+  width: 62px;
+  height: 20px;
   border: none;
   font-size: 17px;
   color: $white-text-color;
   background-color: $bg-color;
+  // background-color: transparent;
 }
 
 .form-input-2 {
