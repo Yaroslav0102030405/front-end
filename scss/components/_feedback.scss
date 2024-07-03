@@ -194,8 +194,8 @@
     margin-bottom: 4px;
   }
 
-  @media screen and (min-width: $tablet) {
-    font-size: 72px;
+  @media screen and (min-width: $tablet) and (max-width: $desktop) {
+    font-size: 70px;
     margin-bottom: 0;
   }
   @media screen and (min-width: $desktop) {
