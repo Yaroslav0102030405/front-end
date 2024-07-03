@@ -487,6 +487,8 @@ img {
 }
 
 .form-title {
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 700;
   max-width: 265px;
   text-align: center;
