@@ -546,12 +546,21 @@ img {
   border-radius: 5px;
   border: none;
   margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
 }
 @media screen and (max-width: 801px) {
   .btn-submit {
     font-size: 14px;
     background-color: #0048ff;
   }
+}
+
+.btn-submit:focus,
+.btn-submit:hover {
+  background-color: #4252d1;
+  color: #ff3459;
 }
 
 .form-text {

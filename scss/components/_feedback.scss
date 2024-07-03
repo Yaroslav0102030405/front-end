@@ -391,11 +391,20 @@
   border-radius: 5px;
   border: none;
   margin-bottom: 20px;
+  cursor: pointer;
+
+  transition: background-color 250ms linear;
 
   @media screen and (max-width: $tablet) {
     font-size: 14px;
     background-color: $btn-mobile;
   }
+}
+
+.btn-submit:focus,
+.btn-submit:hover {
+  background-color: $blue-color;
+  color: $accent-color;
 }
 
 .form-text {
