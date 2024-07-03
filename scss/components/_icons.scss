@@ -1,0 +1,77 @@
+.position-icons {
+  display: none;
+  @media screen and (min-width: 1420px) {
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    width: 142px;
+  }
+}
+
+.html {
+  margin-left: auto;
+}
+
+.js {
+  margin-left: auto;
+}
+
+.vscode {
+  margin-left: auto;
+}
+
+.list-item:nth-child(1)::before {
+  position: absolute;
+  top: 17px;
+  right: -9px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $accent-color;
+}
+
+.list-item:nth-child(2)::before {
+  position: absolute;
+  top: 82px;
+  right: 87px;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $btn-mobile;
+}
+
+.list-item:nth-child(3)::before {
+  position: absolute;
+  top: 170px;
+  right: -12px;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f0be25;
+}
+
+.list-item:nth-child(4)::before {
+  position: absolute;
+  top: 212px;
+  right: 90px;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ff9800;
+}
+
+.list-item:nth-child(5)::before {
+  position: absolute;
+  top: 327px;
+  right: -8px;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #48aef3;
+}

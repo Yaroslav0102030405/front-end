@@ -1,0 +1,26 @@
+.btn-submit {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.6;
+  width: 100%;
+  padding: 15px 0;
+  color: $white-text-color;
+  background-color: $accent-color;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  transition: background-color 250ms linear;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 14px;
+    background-color: $btn-mobile;
+  }
+}
+
+.btn-submit:focus,
+.btn-submit:hover {
+  background-color: $blue-color;
+  // color: $accent-color;
+}

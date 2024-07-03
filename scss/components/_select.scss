@@ -1,0 +1,15 @@
+.select {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+select#size {
+  width: 62px;
+  height: 20px;
+  border: none;
+  font-size: 17px;
+  color: $white-text-color;
+  background-color: $bg-color;
+  // background-color: transparent;
+}

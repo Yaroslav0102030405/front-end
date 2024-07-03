@@ -1,0 +1,41 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: $stroke;
+  color: $white-text-color;
+  font-weight: 500;
+  line-height: 1;
+
+  @media screen and (max-width: $tablet) {
+    width: 88px;
+    font-size: 9px;
+    padding: 5px;
+    line-height: 0.8;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 13px 20px;
+    min-width: 141px;
+
+    font-size: 14px;
+  }
+}
+
+.button::before {
+  content: "";
+  width: 13px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+.button-1::before {
+  background-image: url(../../images/calendar.png);
+  background-size: contain;
+}
+
+.button-2::before {
+  background-image: url(../../images/time.png);
+  background-size: contain;
+}
