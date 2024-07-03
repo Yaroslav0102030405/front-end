@@ -1,45 +1,3 @@
-// <!-- відправка пошти на email -->
-// const form = document.getElementById('form');
-// const result = document.getElementById('result');
-
-// form.addEventListener('submit', function(e) {
-//     // const formData = new FormData(form);
-//     e.preventDefault();
-
-//     const object = Object.fromEntries(formData);
-//     const json = JSON.stringify(object);
-
-//     // result.innerHTML = "Please wait..."
-
-//     fetch('https://api.web3forms.com/submit', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Accept': 'application/json'
-//             },
-//             body: json
-//         })
-//         .then(async (response) => {
-//             let json = await response.json();
-//             if (response.status == 200) {
-//                 result.innerHTML = json.message;
-//             } else {
-//                 console.log(response);
-//                 result.innerHTML = json.message;
-//             }
-//         })
-//         .catch(error => {
-//             console.log(error);
-//             // result.innerHTML = "Something went wrong!";
-//         })
-//         .then(function() {
-//             form.reset();
-//             setTimeout(() => {
-//                 result.style.display = "none";
-//             }, 3000);
-//         });
-// });
-
 const refs = {
   formEl: document.querySelector(".form"),
   btnFormSubmitEl: document.querySelector(".btn-submit"),
@@ -67,11 +25,10 @@ const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 const success = document.getElementById("success");
 
 refs.formEl.addEventListener("submit", onBtnSubmit);
-// refs.formEl.addEventListener("submit", onTelegram);
 
 function onBtnSubmit(e) {
   const formData = new FormData(form);
-  // заборонили перезавантаження сторінки
+
   e.preventDefault();
 
   const object = Object.fromEntries(formData);
@@ -81,7 +38,7 @@ function onBtnSubmit(e) {
   const tel = refs.formInputTel.value;
   const email = refs.formInputEmail.value;
   const select = refs.selectUkOrPl.value;
-  console.log(select);
+  // console.log(select);
 
   if (
     name !== "" &&
@@ -116,12 +73,13 @@ function onBtnSubmit(e) {
         // result.innerHTML = "Something went wrong!";
       })
       .then(function () {
-        form.reset();
+        // form.reset();
         setTimeout(() => {
           // result.style.display = "none";
         }, 3000);
       });
     // отправка в телеграм
+
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
     onInputTextSuccess(refs.inputTextTel, refs.formInputTel);
     onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
@@ -345,11 +303,7 @@ function onBtnSubmit(e) {
   ) {
     onInputTextSuccess(refs.inputTextTel, refs.formInputTel);
     refs.inputTextTel.innerHTML = "";
-    onInputTextSuccess(
-      // refs.inputTextName,
-      refs.inputTextName,
-      refs.formInputName
-    );
+    onInputTextSuccess(refs.inputTextName, refs.formInputName);
     onInputTextError3(
       refs.inputTextEmail,
       refs.inputTextEmail,

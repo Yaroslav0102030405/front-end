@@ -324,7 +324,7 @@ select#size {
   margin-left: auto;
   margin-right: auto;
   font-weight: 700;
-  max-width: 265px;
+  max-width: 277px;
   text-align: center;
   font-size: 22px;
   line-height: 1.2;
@@ -347,6 +347,11 @@ select#size {
   background-color: #272d3d;
   border: none;
   color: #ffffff;
+}
+@media screen and (max-width: 1000px) {
+  .form-input {
+    font-size: 14px;
+  }
 }
 
 .form-input::-webkit-input-placeholder {

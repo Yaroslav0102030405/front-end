@@ -95,25 +95,19 @@
 
           <!-- <div class="form-order"> -->
           <form method="POST" id="form" class="form" autocomplete="off" >
-            <!-- <form action="https://api.web3forms.com/submit" method="POST" id="form" class="form" > -->
-
             <input type="hidden" name="access_key" value="91f13117-b1ce-44d2-825c-b587ac08bfb4">
-
             <h3 class="form-title">Запишіться <span class="red">безкоштовно</span> та отримайте подарунок</h3>
             <ul>
               <li>
                 <div>
                 <label 
-                  ><input  class="form-input form-input-name" type="text" name="name" placeholder="Ім'я та прізвище"
+                  ><input class="form-input form-input-name" type="text" name="name" placeholder="Ваше ім'я та прізвище"
                 /><p class="input-text-name"></p></label>
               </li>
               <li>
-              
-                <!-- <div class="input-select"> -->
                 <label>
                   <div class="input-select">
-                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Номер телефону" autocomplete="off"/>
-                <!-- <p class="input-text-tel"></p> -->
+                <input class="form-input form-input-tel form-input-2" name="tel"  type="tel" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" minlength="9" maxlength="9" placeholder="Ваш номер телефону" autocomplete="off"/>
                 <select class="select" id="size" name="size">
                   <option value="+380" selected>+380</option>
                   <option value="+48">+48</option>
@@ -121,13 +115,8 @@
                 <p class="input-text-tel"></p>
               </div>
               </label>
-                <!-- <select class="select" id="size" name="size">
-                  <option style="background-image:url(./images/calendar.png);" class="icon" value="+380" selected>+380</option>
-                  <option value="+48">+48</option>
-                </select> -->
-              <!-- </div> -->
               </li>
-              <li><label> <input class="form-input form-input-email" name="email"  placeholder="E-mail"><p class="input-text-email"></p></label></li>
+              <li><label> <input class="form-input form-input-email" name="email"  placeholder="Ваш email"><p class="input-text-email"></p></label></li>
             </ul>
             <p class="success-message"></p>
             <button class="btn-submit" type="submit">Записатись безкоштовно</button>
