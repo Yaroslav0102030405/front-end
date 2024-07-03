@@ -118,7 +118,7 @@ function onBtnSubmit(e) {
       .then(function () {
         form.reset();
         setTimeout(() => {
-          result.style.display = "none";
+          // result.style.display = "none";
         }, 3000);
       });
     // отправка в телеграм
