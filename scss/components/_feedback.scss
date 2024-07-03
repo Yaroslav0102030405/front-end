@@ -174,11 +174,17 @@
   }
 }
 
+// .wapper-order {
+//   display: flex;
+//   justify-content: center;
+//   order: 0;
+// }
+
 .order {
   @media screen and (max-width: $tablet) {
     display: flex;
     flex-direction: column-reverse;
-    order: 0;
+    // order: 0;
   }
 }
 
