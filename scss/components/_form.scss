@@ -39,6 +39,7 @@
   // margin-bottom: 10px;
   background-color: $bg-color;
   border: none;
+  // border: 1px solid darkblue;
   color: $white-text-color;
   // font-size: 17px;
 }
@@ -82,3 +83,11 @@
 .input-name-text {
   color: $accent-color;
 }
+
+// .form-input-name:valid {
+//   border-color: #4caf50;
+// }
+
+// .form-input-name:invalid {
+//   border-color: #f44336;
+// }
