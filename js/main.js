@@ -14,9 +14,11 @@ const refs = {
 };
 
 const TOKEN = "6470796582:AAEzk1WSMbpsvtk_zU8M9E4AEclnoD5ovB8";
-// const CHAT_ID = "-1002084469289";
-const CHAT_ID = "6163382681";
-const URI_API = `https://t.me/rgb_hr/bot${TOKEN}/sendMessage`;
+const CHAT_ID = "-1002084469289";
+// const CHAT_ID = "6163382681";
+// const URI_API = `https://t.me/rgb_hr/bot${TOKEN}/sendMessage`;
+const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
 const success = document.getElementById("success");
 
 refs.formEl.addEventListener("submit", onBtnSubmit);
