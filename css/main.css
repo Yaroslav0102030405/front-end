@@ -393,15 +393,10 @@ select#size {
 
 .input-select {
   position: relative;
-  overflow: hidden;
 }
 
 .form-input-2 {
   padding-left: 90px;
-}
-
-.form-input.active {
-  border: 1px solid #ff3459;
 }
 
 .input-name-text {

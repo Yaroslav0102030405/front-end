@@ -69,17 +69,32 @@
 
 .input-select {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .form-input-2 {
   padding-left: 90px;
 }
 
-.form-input.active {
-  border: 1px solid $accent-color;
-}
+// .form-input.active {
+//   border: 1px solid $accent-color;
+// }
 
 .input-name-text {
   color: $accent-color;
 }
+
+// .form-input:valid {
+//   border-color: #4caf50;
+// }
+
+// .form-input:invalid {
+//   border-color: #f44336;
+// }
+
+// input[type="tel"] {
+//   border: 1px dotted #999;
+//   border-radius: 0;
+
+//   -webkit-appearance: none;
+// }
