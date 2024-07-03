@@ -1,3 +1,45 @@
+// <!-- відправка пошти на email -->
+// const form = document.getElementById('form');
+// const result = document.getElementById('result');
+
+// form.addEventListener('submit', function(e) {
+//     // const formData = new FormData(form);
+//     e.preventDefault();
+
+//     const object = Object.fromEntries(formData);
+//     const json = JSON.stringify(object);
+
+//     // result.innerHTML = "Please wait..."
+
+//     fetch('https://api.web3forms.com/submit', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Accept': 'application/json'
+//             },
+//             body: json
+//         })
+//         .then(async (response) => {
+//             let json = await response.json();
+//             if (response.status == 200) {
+//                 result.innerHTML = json.message;
+//             } else {
+//                 console.log(response);
+//                 result.innerHTML = json.message;
+//             }
+//         })
+//         .catch(error => {
+//             console.log(error);
+//             // result.innerHTML = "Something went wrong!";
+//         })
+//         .then(function() {
+//             form.reset();
+//             setTimeout(() => {
+//                 result.style.display = "none";
+//             }, 3000);
+//         });
+// });
+
 const refs = {
   formEl: document.querySelector(".form"),
   btnFormSubmitEl: document.querySelector(".btn-submit"),
@@ -13,6 +55,9 @@ const refs = {
   successMessage: document.querySelector(".success-message"),
 };
 
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+
 const TOKEN = "6470796582:AAEzk1WSMbpsvtk_zU8M9E4AEclnoD5ovB8";
 const CHAT_ID = "-1002084469289";
 // const CHAT_ID = "6163382681";
@@ -25,8 +70,13 @@ refs.formEl.addEventListener("submit", onBtnSubmit);
 // refs.formEl.addEventListener("submit", onTelegram);
 
 function onBtnSubmit(e) {
+  const formData = new FormData(form);
   // заборонили перезавантаження сторінки
   e.preventDefault();
+
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
   const name = refs.formInputName.value;
   const tel = refs.formInputTel.value;
   const email = refs.formInputEmail.value;
@@ -40,6 +90,38 @@ function onBtnSubmit(e) {
     email !== "" &&
     email.includes("@")
   ) {
+    // отправка на пошту
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        // result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 3000);
+      });
+    // отправка в телеграм
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
     onInputTextSuccess(refs.inputTextTel, refs.formInputTel);
     onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
