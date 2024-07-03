@@ -246,9 +246,19 @@ img {
 .content {
   max-width: 426px;
 }
+
 @media screen and (max-width: 801px) {
-  .content {
-    text-align: center;
+  .center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -363,8 +373,8 @@ img {
   .content-text-span-2 {
     width: 80px;
     height: 30px;
-    left: 12px;
-    top: -30%;
+    left: -3px;
+    top: -12%;
   }
 }
 
@@ -397,6 +407,7 @@ img {
     max-width: 328px;
     font-size: 13px;
     line-height: 1.42;
+    text-align: center;
   }
 }
 

@@ -138,8 +138,18 @@
 
 .content {
   max-width: 426px;
+  // @media screen and (max-width: $tablet) {
+  //   // text-align: center;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+}
+
+.center {
   @media screen and (max-width: $tablet) {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -236,8 +246,8 @@
   @media screen and (max-width: $tablet) {
     width: 80px;
     height: 30px;
-    left: 12px;
-    top: -30%;
+    left: -3px;
+    top: -12%;
   }
 }
 
@@ -267,6 +277,7 @@
     max-width: 328px;
     font-size: 13px;
     line-height: 1.42;
+    text-align: center;
   }
 }
 
