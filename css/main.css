@@ -345,7 +345,7 @@ select#size {
   height: 51px;
   border-radius: 5px;
   background-color: #272d3d;
-  border: 1px solid white;
+  border: 1px solid #272d3d;
   color: #ffffff;
   outline: none !important;
   margin-bottom: 10px;
@@ -513,6 +513,7 @@ select#size {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 0;
   }
 }
 
@@ -570,6 +571,24 @@ select#size {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .order-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+@media screen and (min-width: 801px) {
+  .order-2 {
+    display: none;
   }
 }
 
@@ -678,6 +697,7 @@ select#size {
     font-size: 13px;
     line-height: 1.42;
     text-align: center;
+    margin-bottom: 15px;
   }
 }
 
