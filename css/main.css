@@ -352,7 +352,7 @@ select#size {
 }
 @media screen and (max-width: 1000px) {
   .form-input {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
