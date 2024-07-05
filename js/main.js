@@ -181,7 +181,7 @@ function onBtnSubmit(e) {
   } else if (name !== "" && tel !== "" && tel.length < 9 && email === "") {
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
     refs.inputTextName.innerHTML = "";
-    onInputTextError2(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
     onInputTextError(
       refs.inputTextEmail,
       refs.inputTextEmail,
@@ -206,8 +206,8 @@ function onBtnSubmit(e) {
   ) {
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
     refs.inputTextName.innerHTML = "";
-    onInputTextError2(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
-    onInputTextError3(
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(
       refs.inputTextEmail,
       refs.inputTextEmail,
       refs.formInputEmail
