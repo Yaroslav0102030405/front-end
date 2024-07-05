@@ -11,26 +11,50 @@ const refs = {
   inputTextEmail: document.querySelector(".input-text-email"),
   selectUkOrPl: document.querySelector(".select"),
   successMessage: document.querySelector(".success-message"),
+
+  inputs: document.querySelectorAll("input"),
 };
+
+const patterns = {
+  name: /^[a-z\d]{5,12}$/,
+  tel: /^\d{9}$/,
+  email: /^([a-z\d\/.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+};
+
+function validate(field, regex) {
+  // console.log(regex.test(field.value));
+  if (regex.test(field.value)) {
+    field.classList.add("valid");
+    field.classList.remove("invalid");
+
+    // field.classList.remove("error");
+  } else {
+    field.classList.add("invalid");
+  }
+}
+
+refs.inputs.forEach((input) => {
+  input.addEventListener("keyup", (e) => {
+    // console.log(e.target.attributes.name.value);
+    validate(e.target, patterns[e.target.attributes.name.value]);
+  });
+});
 
 const form = document.getElementById("form");
 const result = document.getElementById("result");
-
 const TOKEN = "6470796582:AAEzk1WSMbpsvtk_zU8M9E4AEclnoD5ovB8";
 const CHAT_ID = "-1002084469289";
 // const CHAT_ID = "6163382681";
 // const URI_API = `https://t.me/rgb_hr/bot${TOKEN}/sendMessage`;
 const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
 const success = document.getElementById("success");
 
 refs.formEl.addEventListener("submit", onBtnSubmit);
 
 function onBtnSubmit(e) {
-  const formData = new FormData(form);
-
   e.preventDefault();
 
+  const formData = new FormData(form);
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
 
@@ -42,10 +66,12 @@ function onBtnSubmit(e) {
 
   if (
     name !== "" &&
+    name.length > 5 &&
     tel !== "" &&
     tel.length === 9 &&
     email !== "" &&
-    email.includes("@")
+    email.includes("@") &&
+    email.includes(".")
   ) {
     // отправка на пошту
     const object = Object.fromEntries(formData);
@@ -111,6 +137,7 @@ function onBtnSubmit(e) {
       .finally(() => {
         console.log("Конец");
       });
+    // якщо всі поля пусті
   } else if (name === "" && tel === "" && email === "") {
     onInputTextError(
       refs.inputTextName,
@@ -123,11 +150,27 @@ function onBtnSubmit(e) {
       refs.inputTextEmail,
       refs.formInputEmail
     );
-  } else if (name !== "" && tel === "" && email === "") {
+  } else if (name !== "" && name.length > 5 && tel === "" && email === "") {
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
     // refs.inputTextName.textContent = " Вірно!✔️";
     // refs.inputTextName.style.color = "white";
     refs.inputTextName.innerHTML = "";
+
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    onInputTextError(
+      refs.inputTextEmail,
+      refs.inputTextEmail,
+      refs.formInputEmail
+    );
+  } else if (name !== "" && name.length < 5 && tel === "" && email === "") {
+    onInputTextError(
+      refs.inputTextName,
+      refs.inputTextName,
+      refs.formInputName
+    );
+    // refs.inputTextName.textContent = " Вірно!✔️";
+    // refs.inputTextName.style.color = "white";
+    // refs.inputTextName.innerHTML = "";
 
     onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
     onInputTextError(
@@ -279,8 +322,9 @@ function onBtnSubmit(e) {
     name === "" &&
     tel !== "" &&
     tel.length === 9 &&
-    email !== "" &&
-    email.includes("@")
+    email !== ""
+    // &&
+    // email.includes("@")
   ) {
     onInputTextSuccess(refs.inputTextTel, refs.formInputTel);
     refs.inputTextTel.innerHTML = "";
@@ -309,27 +353,64 @@ function onBtnSubmit(e) {
       refs.inputTextEmail,
       refs.formInputEmail
     );
-  } else if (
-    name !== "" &&
-    tel === "" &&
-    email !== "" &&
-    !email.includes("@")
-  ) {
-    onInputTextSuccess(refs.inputTextName, refs.formInputName);
-    refs.inputTextName.innerHTML = "";
+    // }
+    // else if (
+    //   name !== "" &&
+    //   tel === "" &&
+    //   email !== "" &&
+    //   !email.includes("@")
+    // ) {
+    //   onInputTextSuccess(refs.inputTextName, refs.formInputName);
+    //   refs.inputTextName.innerHTML = "";
+    //   onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    //   onInputTextError3(
+    //     refs.inputTextEmail,
+    //     refs.inputTextEmail,
+    //     refs.formInputEmail
+    //   );
+  } else if (name !== "" && name.length < 5 && tel === "" && email !== "") {
+    // onInputTextError(
+    //   refs.inputTextName,
+    //   refs.inputTextName,
+    //   refs.formInputName
+    // );
+    // refs.inputTextName.innerHTML = "";
     onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
-    onInputTextError3(
-      refs.inputTextEmail,
-      refs.inputTextEmail,
-      refs.formInputEmail
-    );
-  } else if (name !== "" && tel === "" && email !== "" && email.includes("@")) {
+    // onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
+  } else if (name !== "" && name.length > 5 && tel === "" && email !== "") {
     onInputTextSuccess(refs.inputTextName, refs.formInputName);
-    refs.inputTextName.innerHTML = "";
+    // refs.inputTextName.innerHTML = "";
     onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
-    onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
+    // onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
+  } else if (name !== "" && name.length < 5 && tel === "" && email !== "") {
+    // onInputTextError(
+    //   refs.inputTextName,
+    //   refs.inputTextName,
+    //   refs.formInputName
+    // );
+    // refs.inputTextName.innerHTML = "";
+    onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+    // onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
   }
+  // else if (
+  //   name !== "" &&
+  //   name.length < 5 &&
+  //   tel !== "" &&
+  //   tel.length < 9 &&
+  //   email !== ""
+  // ) {
+  //   // onInputTextError(
+  //   //   refs.inputTextName,
+  //   //   refs.inputTextName,
+  //   //   refs.formInputName
+  //   // );
+  //   // refs.inputTextName.innerHTML = "";
+  //   // onInputTextError(refs.inputTextTel, refs.inputTextTel, refs.formInputTel);
+  //   // onInputTextSuccess(refs.inputTextEmail, refs.formInputEmail);
+  // }
 }
+
+// _______---------------------------
 
 function onInputTextSuccess(color, border) {
   // name.textContent = " Вірно!✔️";
@@ -338,19 +419,33 @@ function onInputTextSuccess(color, border) {
 }
 
 function onInputTextError(name, color, border) {
-  name.textContent = "Обов'язкове поле для заповнення";
-  color.style.color = "#FF3131";
-  border.style.border = "1px solid #FF3131";
+  // name.textContent = "Обов'язкове поле для заповнення";
+  // color.style.color = "#FF3131";
+  // border.style.border = "1px solid #FF3131";
+  // name.style.opacity = 1;
+  // name.style.height = "auto";
+  // name.style.marginBottom = "10px";
+
+  color.classList.add("error-color");
+  border.classList.add("error-border");
+  name.classList.add("error-name");
 }
 
-function onInputTextError2(name, color, border) {
-  name.textContent = "Поле має містити не менше 9 символів";
-  color.style.color = "#FF3131";
-  border.style.border = "1px solid #FF3131";
-}
+// function onInputTextError2(name, color, border) {
+//   name.textContent = "Телефон повинен містити тільки 9 цифр";
+//   // color.style.color = "#FF3131";
+//   // border.style.border = "1px solid #FF3131";
+//   color.classList.add("error-color");
+//   border.classList.add("error-border");
+//   // name.classList.add("error-name");
+// }
 
-function onInputTextError3(name, color, border) {
-  name.textContent = "Поле має містити обов'язковий @ символ";
-  color.style.color = "#FF3131";
-  border.style.border = "1px solid #FF3131";
-}
+// function onInputTextError3(name, color, border) {
+//   name.textContent = "E-mail повинен мати правильну форму";
+//   // color.style.color = "#FF3131";
+//   // border.style.border = "1px solid #FF3131";
+
+//   color.classList.add("error-color");
+//   border.classList.add("error-border");
+//   // name.classList.add("error-name");
+// }

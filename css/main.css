@@ -345,8 +345,10 @@ select#size {
   height: 51px;
   border-radius: 5px;
   background-color: #272d3d;
-  border: none;
+  border: 1px solid white;
   color: #ffffff;
+  outline: none !important;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 1000px) {
   .form-input {
@@ -406,6 +408,53 @@ select#size {
 
 .input-name-text {
   color: #ff3459;
+}
+
+.form-input.valid {
+  border-color: #4caf50;
+}
+
+.form-input.invalid {
+  border-color: orange;
+}
+
+.form-input + p {
+  text-align: center;
+  color: orange;
+  opacity: 0;
+  height: 0;
+}
+
+.form-input.invalid + p {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error-name {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error-color {
+  color: #ff3131;
+}
+
+.error-border {
+  border: 1px solid #ff3131;
+}
+
+.input-text-name {
+  margin-bottom: 0;
+}
+
+.input-text-tel {
+  margin-bottom: 0;
+}
+
+.input-text-email {
+  margin-bottom: 0;
 }
 
 .feedback {

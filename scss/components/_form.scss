@@ -38,11 +38,12 @@
   border-radius: 5px;
   // margin-bottom: 10px;
   background-color: $bg-color;
-  border: none;
+  border: 1px solid white;
   // border: 1px solid darkblue;
   color: $white-text-color;
   // font-size: 17px;
-
+  outline: none !important;
+  margin-bottom: 10px;
   @media screen and (max-width: $desktop) {
     font-size: 14px;
   }
@@ -88,10 +89,52 @@
   color: $accent-color;
 }
 
-// .form-input-name:valid {
-//   border-color: #4caf50;
-// }
+.form-input.valid {
+  border-color: #4caf50;
+}
 
-// .form-input-name:invalid {
-//   border-color: #f44336;
-// }
+.form-input.invalid {
+  border-color: orange;
+}
+
+.form-input + p {
+  text-align: center;
+  color: orange;
+  opacity: 0;
+  height: 0;
+}
+
+.form-input.invalid + p {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error-name {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error-color {
+  color: #ff3131;
+}
+
+.error-border {
+  border: 1px solid #ff3131;
+}
+
+.input-text-name {
+  margin-bottom: 0;
+  // color: $stroke;
+}
+
+.input-text-tel {
+  margin-bottom: 0;
+  // color: $stroke;
+}
+
+.input-text-email {
+  margin-bottom: 0;
+  // color: $stroke;
+}
